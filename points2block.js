@@ -5,9 +5,9 @@ var query = require('./data/example-queries.json');
 
 function make_point(lng, lat) {
     return {
-        "type": "Feature",
-        "geometry": {
-        "type": "Point",
+        "type"     : "Feature",
+        "geometry" : {
+        "type"     : "Point",
             "coordinates": [lng, lat]
         }        
     }
@@ -19,7 +19,7 @@ function intersect(point, features) {
     })    
 }
 
-for(i=0; i < query.length; i++) {
+for(i = 0; i < query.length; i++) {
     pt = make_point(Number(query[i][0]), Number(query[i][1]))
     console.log(JSON.stringify(intersect(pt, data['features'])))
 }
